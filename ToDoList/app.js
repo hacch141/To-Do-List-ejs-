@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("Public"));
 
 app.get("/", function(req, res){
+    
     // res.send("Hey, I'm harsh.");
     // let currentDay = today.getDay();
     // let day = "";
@@ -64,7 +65,8 @@ app.get("/", function(req, res){
 
 app.post("/", function(req, res){
     const item = req.body.newItem;
-    console.log(req.body);
+    // console.log(req.body);
+    
     if (req.body.list === " Work List") {
         workItems.push(item);
         res.redirect("/work");
